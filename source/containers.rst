@@ -2,20 +2,25 @@
  Containers
 ============
 
-Containers form one of the pillars of Kubernetes and it is very
-important to understand them well. 
+Kubernetes is a *container orchestration platform* so containers are
+at the heart of the technology.
 
 Overview
 ========
 
 Containers are *isolated* groups of processes running on a single
-host. They run directly on a host without any intermediate layer (such
-as   Hypervisor). Hence, they are usually referred to as
-"light-weight". And finally, all containers share the kernel.
+host. They run directly on a host without any intermediate layer as
+opposed to `Virtual Machines`_ which require a `Hypervisor`_ to be
+present. This is also the reason why containers are referred to as
+a "light-weight" solution to deploy applications. And finally, all
+containers share the kernel.
 
 The most important point to note is the fact that container processes
-run directly on the host. There is no intermediate layer as is the
-case with virtualization such as VMware and VirtualBox.
+run directly on the host. As can be seen in the following picture,
+there is no intermediate layer as is the case with virtualization such
+as `vmware`_ and `VirtualBox`_.
+
+.. image:: images/containers.png
 
 So if the container processes run directly on the host, what stops
 them from seeing each other or even affecting each other? That is
@@ -24,28 +29,25 @@ provisions to isolate or sandbox a process (or a group of processes)
 to the point that the processes believe that they are running on a
 dedicated host. This is  despite the fact that they are just normal
 processes on the host and they can be seen from the host just like any
-other processes. 
+other processes (given sufficient permissions).
 
 A container is usually a single process though sometimes you see
-more than one process as well. So if you follow the recommended
-pattern of one process per container, what you are talking about is
-taking a normal process and then creating an isolated environment
-around it. Basically limiting the process in terms of what it can see
-and what it can do. 
+more than one process as well. Containerization involves creating an
+isolated environment around a process or group of processes. Basically
+we limit the processes in terms of what they can see and what they can
+do.
 
 Finally, it is important to understand that all containers share same
 running kernel. There is no isolation there and that is the biggest
-difference between a virtualization guest VM and containers. A side
-effect of sharing the kernel is the fact that if the container uses a
+difference between `Virtual Machines`_ and containers. A side
+effect of sharing the kernel is that if the container uses a
 kernel module or does something with a kernel module, there is no way
-to isolate it from other containers. 
+to isolate it from other containers.
 
 .. note 
 
   There are some container solutions such as Kata containers that
   offer more isolation.
-
-.. image:: images/containers.png
 
 
 Container building blocks
@@ -137,3 +139,7 @@ example.
 
 
 
+.. _Hypervisor: https://en.wikipedia.org/wiki/Hypervisor
+.. _Virtual Machines: https://en.wikipedia.org/wiki/Virtual_machine
+.. _VirtualBox: https://www.virtualbox.org/
+.. _vmware: https://www.vmware.com/solutions/virtualization.html
