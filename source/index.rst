@@ -12,8 +12,6 @@ Welcome to Kubernetes Concepts's documentation!
 
    intro
    containers
-   example
-
 
 
 Indices and tables

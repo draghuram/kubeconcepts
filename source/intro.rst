@@ -3,7 +3,7 @@
 ==============
 
 Kubernetes is very much getting lots of love and mind share these
-days. Here is how `kubernetes.io`_ describes it:
+days. Here is how `kubernetes.io`_ defines it:
 
   Kubernetes (K8s) is an open-source system for automating deployment,
   scaling, and management of containerized applications. 
