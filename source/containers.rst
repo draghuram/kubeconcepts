@@ -16,11 +16,13 @@ a "light-weight" solution to deploy applications. And finally, all
 containers share the kernel.
 
 The most important point to note is the fact that container processes
-run directly on the host. As can be seen in the following picture,
-there is no intermediate layer between kernel and applications, as is
-the case with virtualization such as `vmware`_ and `VirtualBox`_.
+run directly on the host. As can be seen in the following picture
+(*source: docker.com*), there is no intermediate layer between kernel
+and applications, as is the case with virtualization such as `vmware`_
+and `VirtualBox`_. 
 
 .. image:: images/containers.png
+  :target: docker.com
 
 So if the container processes run directly on the host, what stops
 them from seeing each other or even affecting each other? That is
