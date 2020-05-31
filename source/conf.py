@@ -21,6 +21,7 @@ project = 'Kubernetes Concepts'
 copyright = '2020, Raghuram Devarakonda'
 author = 'Raghuram Devarakonda'
 
+master_doc = 'index'
 
 # -- General configuration ---------------------------------------------------
 
