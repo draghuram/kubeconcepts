@@ -46,9 +46,7 @@ the server is running directly on the host.
 
 As a next step, we will build a Docker image and run the server in a
 container (instead of directly running on the host). Here are the
-contents of ``Dockerfile``:
-
-.. code-block::
+contents of ``Dockerfile``::
 
    FROM python:3
 
@@ -92,7 +90,9 @@ available port, not just 5000. For information about other options,
 check `Docker Run`_ reference.
 
 At this point, the HTTP server is running and we can access it using
-"curl" just like before::
+"curl" just like before.
+
+.. code-block:: bash
 
   $ curl http://localhost:5000
   Hello, World!
