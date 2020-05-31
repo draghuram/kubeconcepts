@@ -131,10 +131,19 @@ Tools
     `Jekyll`_ locally as follows, to check that my blog looks ok (`my
     blog`_ is built using `Jekyll`_).
 
-.. code-block:: bash
+    .. code-block:: bash
 
-    $ docker run -it --rm --volume=$(pwd):/srv/jekyll -it -p \4000:4000
-        jekyll/jekyll jekyll s 
+       $ docker run -it --rm --volume=$(pwd):/srv/jekyll -it -p 4000:4000
+             jekyll/jekyll jekyll s 
+
+Exploring
+    Say you are running Ubuntu and you want to check something out on
+    a Fedora machine. You can simply run a container with Fedora
+    image, like so:
+
+    .. code-block:: bash
+
+       $ docker run -it --rm fedora bash
 
 Conclusion
 ==========
