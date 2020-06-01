@@ -24,8 +24,8 @@ Here is a very basic example taken from `Flask Quickstart`_:
        app.run(host="0.0.0.0")
 
 As can be seen, the server is very simple and implements a single end
-point. You can run the server as follows (command output is not
-shown):
+point. Save the code in the file ``basicserver.py`` and you can then
+run the server as follows (command output is not shown):
 
 .. code-block:: bash
 
@@ -45,8 +45,9 @@ So our little HTTP server is up and responding to requests. Note that
 the server is running directly on the host.
 
 As a next step, we will build a Docker image and run the server in a
-container (instead of directly running on the host). Here are the
-contents of ``Dockerfile``::
+container (instead of directly running on the host). Create a file
+called ``Dockerfile`` in the same directory as ``basicserver.py`` with
+the following contents::
 
    FROM python:3
 
@@ -104,11 +105,11 @@ run the container using Docker and use the application. This is
 possible because all the required components of the server
 (e.g. Python and Flask) are packaged in the container image.
 
-It is interesting to note that a container image corresponds to an
-"executable" file such as ELF binary and a "container" corresponds to a
-running process. Just like running a process involves taking an
-executable file and creating a "process", running a container takes an
-image and creates a "container".
+It is interesting to note that a container image is comparable to an
+"executable" file such as ELF binary while the "container" can be
+compared to a running process. Just like running a process involves
+taking an executable file and creating a "process", running a
+container takes an image and creates a "container".
 
 You don't need to build images yourself in order to use containers. In
 many cases, you will be able to use images that are already available
@@ -118,7 +119,7 @@ Use Cases
 =========
 
 There are many different scenarios where you can use containers. Here
-are couple of main ones:
+are few interesting ones:
 
 Microservices
     Microservices are services that implement a small and well defined
@@ -138,7 +139,7 @@ Tools
 
 Exploring
     Say you are running Ubuntu and you want to check something out on
-    a Fedora machine. You can simply run a container with Fedora
+    a `Fedora`_ machine. You can simply run a container with Fedora
     image, like so:
 
     .. code-block:: bash
@@ -161,6 +162,8 @@ server and we have seen how it can be run as a Docker container. In
 the next chapter, we will see how we can deploy the same server in
 Kubernetes.
 
+**More content is coming soon. Stay tuned!**
+
 .. _Flask: https://flask.palletsprojects.com/en/1.1.x/
 .. _Docker Run: https://docs.docker.com/engine/reference/run/
 .. _Docker Hub: https://hub.docker.com/
@@ -170,3 +173,4 @@ Kubernetes.
 .. _Docker Concepts: https://docs.docker.com/get-started/overview/
 .. _Flask Quickstart: https://flask.palletsprojects.com/en/1.1.x/quickstart/
 .. _my blog: https://draghuram.github.io
+.. _Fedora: https://getfedora.org/
