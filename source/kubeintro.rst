@@ -182,6 +182,8 @@ abstractions that work with pods. In the process, we will also learn
 some general concepts about Kubernetes resources and the recommended
 way of creating and otherwise managing such resources.
 
+**More content is coming soon. Stay tuned!**
+
 .. _Katacoda: https://www.katacoda.com/courses/kubernetes/playground
 .. _minikube: https://minikube.sigs.k8s.io/docs/
 .. _kubectl: https://kubernetes.io/docs/tasks/tools/install-kubectl/

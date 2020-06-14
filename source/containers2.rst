@@ -162,8 +162,6 @@ server and we have seen how it can be run as a Docker container. In
 the next chapter, we will see how we can deploy the same server in
 Kubernetes.
 
-**More content is coming soon. Stay tuned!**
-
 .. _Flask: https://flask.palletsprojects.com/en/1.1.x/
 .. _Docker Run: https://docs.docker.com/engine/reference/run/
 .. _Docker Hub: https://hub.docker.com/
