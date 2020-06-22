@@ -146,34 +146,27 @@ Let us now run the server::
     
 We can see that the HTTP server pod is running. However, even though
 the server is running, it is not reachable from outside the cluster
-yet. One way to fix this is to expose the pod as a "service"::
+yet. One simple way to fix this is to have "kubectl" forward traffic
+from a port on the localhost to the server inside the cluster, like
+so::
 
-    $ kubectl expose pod testpod --name testsvc --port 5000 --type NodePort
-    service/testsvc exposed
+    $ kubectl port-forward testpod 5000:5000
+    Forwarding from 127.0.0.1:5000 -> 5000
+    Forwarding from [::1]:5000 -> 5000
 
-This command creates a "service" of type "NodePort" that maps pod's
-port (5000) to a port on the node. This will allow us to reach the
-HTTP server using the node address. The following command shows the
-newly created service, including the port at which the HTTP
-server can be reached::
-
-    $ kubectl get svc/testsvc
-    NAME      TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
-    testsvc   NodePort   10.100.29.140   <none>        5000:32490/TCP   20s
-
-From the command response, we can see that port 32490 is where the
-service can be reached. We can easily verify that using the curl
-command similar to what we used in the previous chapter.
+Once this forwarding is set up, we can reach the HTTP server from
+localhost. We can easily verify that using the same curl command we
+used in the previous chapter.
 
 .. code-block:: bash
 
-  $ curl http://localhost:32490
+  $ curl http://localhost:5000
   Hello, World!
 
 That's it! We now managed to run our server in three different
 environments - on the host directly, as a Docker container, and
 finally in a Kubernetes cluster. But do note that the above commands
-were only meant to get a pod and service up and running for some quick
+were only meant to get a pod up and running for some quick
 testing. They are not the recommended way to create resources in a
 Kubernetes cluster.  
 
