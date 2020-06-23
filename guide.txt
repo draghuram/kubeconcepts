@@ -1,0 +1,57 @@
+
+Pods
+----
+
+- Multiple containers (init, teardown etc). Why multiple containers?
+- Images, Commands and arguments.
+- Env variables
+- Passing metadata as env variables.
+- Ports
+
+Srevices
+--------
+
+- ClusterIP and NodePort. 
+- Load Balancer
+
+
+Deployments and Replicasets
+---------------------------
+
+Rolling updates
+Load balancing
+
+Storage
+-------
+
+PV/PVC
+Snapshots
+CSI
+Take Mongo/Minio as example
+
+Advanced
+--------
+
+Mention that you are not covering several other areas such as
+Auth/Auth. 
+
+Further Learning
+----------------
+
+Give links to Concepts/Tasks
+
+SIGs/Workgroups/Zoom meetings
+
+Very open and supportive process
+
+Conclusion
+----------
+
+This guide is deliberately kept simple and excludes many
+features. Send email if you have quetions or open a PR.
+
+
+
+
+
+

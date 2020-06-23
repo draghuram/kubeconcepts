@@ -15,6 +15,7 @@ Welcome to Kubernetes Concepts!
    containers
    containers2
    kubeintro
+   kubemodel
    
 
 
