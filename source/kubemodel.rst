@@ -171,6 +171,9 @@ do. But once resource is updated with nodeName, all kubelets will
 notice the change. But onloy the kubelet on the right node will start
 containers. 
 
+**Talk about stateless implementaiton of controllers. They are only
+given name of the resource**.
+
 Declarative model will become clear with another example. There is a
 resource called "ReplicaSet" where you can define how many replicas
 you want to run for a pod. Say, I created the resource asking for 3
