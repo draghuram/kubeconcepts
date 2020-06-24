@@ -125,7 +125,7 @@ pod and access it. Mention that we are not following recommended way.
 
 - Kubernetes implements REST APIs to manage all the objects.
 
-- kubectl has sub-commands to manage the lifecycle of the resources.
+- kubectl has sub-commands to manage the life cycle of the resources.
   - create
   - get
   - apply
@@ -176,6 +176,22 @@ ReplicaSet example to explain declarative model.
 
 ---
 
+## Custom Resources
+
+- Custom Resource Definition (CRD)
+
+- Custom Controllers
+
+- Kubebuilder/Operator SDK
+
+- KubeDR
+  - https://github.com/catalogicsoftware/kubedr
+
+Note: Take BackupLocation as an example and provide a complete
+walk-through. 
+
+---
+
 ## Pods
 
 - Model a "logical" host running multiple processes.
@@ -196,7 +212,7 @@ Env variables: Also mention how to pass metadata such as Pod name.
 
 ## Replica Sets
 
-- Gurantees availability of a given number of identical pods.
+- Guarantees availability of a given number of identical pods.
 
 - Spec
   - Pod selector
@@ -215,15 +231,46 @@ Note: Number of replicas can easily be changed by updating
 
 ## Deployments
 
+- The main use case of a Deployment is automated updates to the Pod. 
+
+- An example is updating the container image in the Pod.
+
+- It is also possible to rollback the updates.
+
+---
+
+## Namespaces
+
+- Namespaces define "virtual" clusters.
+
+- Resource names need to be unique only within a namespace.
+
+- Not all resources can be created in a namespace.
+  - Such resources are known as "Cluster-scoped". An example is
+    "CustomResourceDefinition" resource.
+
 ---
 
 ## Services
+
+- An abstraction to expose applications running in a set of pods as a
+  network service.
+  
+- Kubernetes creates a DNS name for each service so they can be
+  reached by using its name within the cluster.
+ 
+- Types
+  - ClusterIP, NodePort, ...
 
 ---
 
 ## Auto Scaling
 
-- 
+- Horizontal Pod Autoscaler
+
+- Cluster Autoscaler
+
+---
 
 ## Storage
 
@@ -233,23 +280,37 @@ Note: Number of replicas can easily be changed by updating
 
 ---
 
-## Secrets and Configmaps
-
----
-
 ## Container Storage Interface (CSI)
-
----
-
-## Labels and Annotations
 
 ---
 
 ## Authentication
 
+- Kubernetes has no concept of users.
+  - There is no way to tell which user created what resources.
+  
+- There are several different authentication mechanism.
+  - Service accounts
+  - Open ID connect
+  - Authentication Proxies
+
 ---
 
 ## Authorization
+
+- Support RBAC (Role based Access Control)
+
+- Resources
+  - Role/ClusterRole
+  - RoleBinding/ClusterRoleBinding
+
+---
+
+## Managed Kubernetes
+
+- EKS
+- GKE
+- AKS
 
 ---
 
@@ -267,9 +328,20 @@ Note: Number of replicas can easily be changed by updating
 
 ## Links
 
+- Concepts
+
+- Tasks
+
+- kubeconcepts
+
 ---
 
 ## Conclusion
+
+- Kubernetes has changed the way we architect and deploy applications.
+
+- It is an important tool in building distributed and cloud native
+  systems.
 
 ---
 

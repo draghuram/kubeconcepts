@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: basicserver
+  labels:
+    component: basicserver
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: webserver
+  template:
+    metadata:
+      name: basicserver
+      labels:
+          component: webserver
+    spec:
+      containers:
+      - image: basicserver:0.42
+        name: basicserver

@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: basicserver2
+  labels:
+      component: webserver
+spec:
+  containers:
+  - image: basicserver:0.42
+    name: basicserver
+    env:
+    - name: GREETING
+      value: Hi
+
