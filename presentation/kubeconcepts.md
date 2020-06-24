@@ -272,15 +272,30 @@ Note: Number of replicas can easily be changed by updating
 
 ---
 
-## Storage
+## Storage - Persistent Volumes
 
-- Persistent Volumes
+- Can be created statically or Kubernetes can create on demand.
+  - Supported types: "Filesystem", "Block"
 
-- Volume Snapshots
+- A PV is requested by a Pod using *PersistentVolumeClaim* resource.
+
+- StorageClasses help with dynamic provisioning of persistent
+  volumes.
+  
+- Volume providers are available for all well known storage and cloud
+  offerings.
 
 ---
 
 ## Container Storage Interface (CSI)
+
+- Early on, storage providers were part of Kubernetes code base.
+  - They are known as "in-tree" providers
+  
+- CSI spec has been defined to make development of volume providers
+  more flexible.
+  
+- Volume Snapshots
 
 ---
 
@@ -306,13 +321,38 @@ Note: Number of replicas can easily be changed by updating
 
 ---
 
+## Other Resources...
+
+- Secrets and Configmaps
+
+- DaemonSets
+
+- StatefulSets
+
+- Jobs/CronJobs
+
 ## Managed Kubernetes
 
-- EKS
-- GKE
-- AKS
+- EKS - Amazon
+- GKE - Google
+- AKS - Azure
 
 ---
+
+## Advantages
+
+- Cloud native
+
+- Cloud agnostic
+
+- Portable
+
+## Current Work
+
+- Multi-tenancy
+  - Hierarchical namespaces
+
+- Container Object Storage Interface (COSI)
 
 ## Community
 

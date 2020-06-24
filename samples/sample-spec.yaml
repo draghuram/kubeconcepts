@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    demo.component: apiserver
+  name: demo-apiserver
+  namespace: demo-system
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      demo.component: apiserver
+  template:
+    metadata:
+      labels:
+        demo.component: apiserver
+    spec:
+      containers:
+      - args:
+        - gunicorn
+        - -t
+        - "60"
+        - -b
+        - :8000
+        - --access-logfile
+        - '-'
+        - --access-logformat
+        - '%(h)s %({authorization}i)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s"
+          "%(a)s"'
+        - -w
+        - "4"
+        - server.app.main:create_app()
+        env:
+        - name: DEMO_AUTH_BASIC
+          value: basic
+        - name: DEMO_MONGO_URI
+          valueFrom:
+            configMapKeyRef:
+              key: demo_mongo_uri
+              name: mongo-env-vars
+        - name: MY_POD_NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: DEMO_API_SECRET
+          valueFrom:
+            secretKeyRef:
+              key: demo_api_secret
+              name: auth-secrets
+        image: demo-apiserver:latest
+        name: apiserver
+        ports:
+        - containerPort: 8000
+          name: http
+      serviceAccountName: demo-apiserver
