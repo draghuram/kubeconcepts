@@ -108,8 +108,6 @@ And then mention that Kubernetes solves these issues.
   - VirtualBox
   - Directly on host
   
-Note: Show a quick demo of minikube.
-
 ---
 
 ## Kubectl
@@ -142,6 +140,8 @@ pod and access it. Mention that we are not following recommended way.
     kind: Pod
     metadata:
       name: basicserver
+      labels:
+          component: webserver
     spec:
       containers:
       - image: basicserver:0.42
