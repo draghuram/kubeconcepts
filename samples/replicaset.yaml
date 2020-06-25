@@ -5,7 +5,7 @@ metadata:
   labels:
     component: basicserver
 spec:
-  replicas: 1
+  replicas: 5
   selector:
     matchLabels:
       component: webserver

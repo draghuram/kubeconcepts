@@ -5,10 +5,14 @@ metadata:
   labels:
       component: webserver
 spec:
+  volumes:
+  - name: myvol
+    persistentVolumeClaim:
+      claimName: test-pvc
   containers:
   - image: basicserver:0.42
     name: basicserver
-    env:
-    - name: GREETING
-      value: Hi
+    volumeMounts:
+    - mountPath: "/data"
+      name: myvol
 

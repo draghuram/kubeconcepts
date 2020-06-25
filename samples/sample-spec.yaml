@@ -33,20 +33,6 @@ spec:
         env:
         - name: DEMO_AUTH_BASIC
           value: basic
-        - name: DEMO_MONGO_URI
-          valueFrom:
-            configMapKeyRef:
-              key: demo_mongo_uri
-              name: mongo-env-vars
-        - name: MY_POD_NAMESPACE
-          valueFrom:
-            fieldRef:
-              fieldPath: metadata.namespace
-        - name: DEMO_API_SECRET
-          valueFrom:
-            secretKeyRef:
-              key: demo_api_secret
-              name: auth-secrets
         image: demo-apiserver:latest
         name: apiserver
         ports:

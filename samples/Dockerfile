@@ -5,9 +5,7 @@ RUN mkdir /opt/app && \
     /opt/venv/bin/pip install flask
 
 COPY basicserver.py /opt/app
-COPY basicserver2.py /opt/app
-COPY basicserver3.py /opt/app
 
 EXPOSE 5000/tcp
 
-CMD ["/opt/venv/bin/python", "/opt/app/basicserver2.py"]
+CMD ["/opt/venv/bin/python", "/opt/app/basicserver.py"]

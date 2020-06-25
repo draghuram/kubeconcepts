@@ -13,6 +13,9 @@ modify the file if the changes cannot be displayed as slides.
 ## Agenda
 
 - Containers
+- Architecture
+- Resources
+- Conclusion
 
 ---
 
@@ -181,6 +184,8 @@ ReplicaSet example to explain declarative model.
 - Custom Resource Definition (CRD)
 
 - Custom Controllers
+  - Combination of Custom resources and Custom controllers is known as
+    an "Operator".
 
 - Kubebuilder/Operator SDK
 
@@ -197,7 +202,7 @@ walk-through.
 - Model a "logical" host running multiple processes.
   - Pods are ephemeral.
 
-- Specifying Environment variables
+- Defining Environment variables
 
 - Passing Command line arguments
 
@@ -206,19 +211,12 @@ walk-through.
 Note: You will never create pods directly. But instead use higher
 level constructs such as Deployments.
 
-Env variables: Also mention how to pass metadata such as Pod name.
-
 ---
 
 ## Replica Sets
 
 - Guarantees availability of a given number of identical pods.
 
-- Spec
-  - Pod selector
-  - Number of replicas
-  - Pod template
-  
 - Use Deployments instead of directly dealing with ReplicaSets.
 
 - "Horizontal Pod Autoscaler" resource can be created to scale a
@@ -246,8 +244,8 @@ Note: Number of replicas can easily be changed by updating
 - Resource names need to be unique only within a namespace.
 
 - Not all resources can be created in a namespace.
-  - Such resources are known as "Cluster-scoped". An example is
-    "CustomResourceDefinition" resource.
+  - Such resources are known as "Cluster-scoped"
+    (e.g. "CustomResourceDefinition"). 
 
 ---
 
@@ -290,21 +288,22 @@ Note: Number of replicas can easily be changed by updating
 ## Container Storage Interface (CSI)
 
 - Early on, storage providers were part of Kubernetes code base.
-  - They are known as "in-tree" providers
+  - They are known as "in-tree" providers.
   
 - CSI spec has been defined to make development of volume providers
   more flexible.
   
 - Volume Snapshots
+  - Only available with CSI drivers.
 
 ---
 
 ## Authentication
 
-- Kubernetes has no concept of users.
+- Kubernetes has no resource abstracting users.
   - There is no way to tell which user created what resources.
   
-- There are several different authentication mechanism.
+- Supported authentication mechanisms:
   - Service accounts
   - Open ID connect
   - Authentication Proxies
@@ -313,7 +312,7 @@ Note: Number of replicas can easily be changed by updating
 
 ## Authorization
 
-- Support RBAC (Role based Access Control)
+- Supports RBAC (Role Based Access Control)
 
 - Resources
   - Role/ClusterRole
@@ -331,11 +330,15 @@ Note: Number of replicas can easily be changed by updating
 
 - Jobs/CronJobs
 
-## Managed Kubernetes
+---
 
-- EKS - Amazon
-- GKE - Google
-- AKS - Azure
+## Kubernetes Distros
+
+- There are many Kubernetes distributions available.
+  - e.g. Rancher
+  
+- Managed solutions
+ - GKE (Google), EKS (Amazon), AKS (Azure), DigitalOcean
 
 ---
 
@@ -347,12 +350,16 @@ Note: Number of replicas can easily be changed by updating
 
 - Portable
 
-## Current Work
+---
+
+## Ongoing Work
 
 - Multi-tenancy
   - Hierarchical namespaces
-
+  
 - Container Object Storage Interface (COSI)
+
+---
 
 ## Community
 
@@ -368,11 +375,11 @@ Note: Number of replicas can easily be changed by updating
 
 ## Links
 
-- Concepts
+- https://kubernetes.io/docs/concepts/
 
-- Tasks
+- https://kubernetes.io/docs/tasks/
 
-- kubeconcepts
+- https://kubeconcepts.readthedocs.io/en/latest/index.html
 
 ---
 
