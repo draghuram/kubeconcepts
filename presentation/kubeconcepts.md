@@ -107,7 +107,7 @@ And then mention that Kubernetes solves these issues.
   - Docker
   - VirtualBox
   - Directly on host
-  
+
 ---
 
 ## Kubectl
@@ -355,7 +355,6 @@ Note: Number of replicas can easily be changed by updating
 ## Ongoing Work
 
 - Multi-tenancy
-  - Hierarchical namespaces
   
 - Container Object Storage Interface (COSI)
 
@@ -378,6 +377,8 @@ Note: Number of replicas can easily be changed by updating
 - https://kubernetes.io/docs/concepts/
 
 - https://kubernetes.io/docs/tasks/
+
+- https://kubernetespodcast.com/
 
 - https://kubeconcepts.readthedocs.io/en/latest/index.html
 
