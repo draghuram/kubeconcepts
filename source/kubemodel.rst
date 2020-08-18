@@ -48,7 +48,7 @@ But this time, we will create the Pod resource using "kubectl create"
 by building what is simply called "spec". It can be built using YAML
 or JSON format but YAML is more prevalent so that is what we will use
 here. It helps to know YAML format for making sense of many examples
-in this guide so I suggest that you vising YAML page and understand
+in this guide so I suggest that you visit YAML page and understand
 few core concepts. 
 
 Here is the spec for the same Pod we created before::
@@ -78,7 +78,7 @@ resources. Let us see what each line means.
 The combination of "apiGroup", "version", and "Kind" uniquely
 identifies every resource that Kubernetes supports. "apiGroup"
 combines related funcitonality into a group that can be enabled or
-disables as per the need. This combination is what allows seamless
+disabled as per the need. This combination is what allows seamless
 versioning of resources. You will frequently see new APIs move from
 "v1alpha" to "v1beta" to eventually "v1".
 
